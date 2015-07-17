@@ -1,0 +1,39 @@
+{
+  "name": "enc2",
+  "version": "1.0.0",
+  "description": "Perjet de web live",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "start": "babel-node server/main.js | bunyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://65893078da71140ffdbc0b0b4b0ae253840838e3@github.com/Dahriel/enc2.git"
+  },
+  "author": "Gabriel Com <gabriel.com.email@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dahriel/enc2/issues"
+  },
+  "homepage": "https://github.com/Dahriel/enc2",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-babel": "^5.0.1",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.5.1",
+    "load-grunt-config": "^0.17.2",
+    "load-grunt-tasks": "^3.2.0"
+  },
+  "dependencies": {
+    "babel": "^5.6.23",
+    "bunyan": "^1.4.0",
+    "express": "^4.13.1",
+    "jsonwebtoken": "^5.0.4",
+    "passport": "^0.2.2",
+    "passport-google-oauth": "^0.2.0",
+    "socket.io": "^1.3.6",
+    "twitter": "^1.2.5"
+  }
+}
