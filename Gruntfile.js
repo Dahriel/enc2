@@ -5,5 +5,12 @@ module.exports = function (grunt) {
     var config = require('load-grunt-config')(grunt);
     grunt.initConfig(config);
 
-    grunt.registerTask('default', ["clean", "babel", "copy", "express:dev", "watch"]);
+    grunt.registerTask('default', ['clean',
+        'babel',
+        'copy',
+        'wiredep',
+        'injector',
+        'express:dev',
+        'open:dev',
+        'watch']);
 };

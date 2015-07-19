@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" ng-app="StarterApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Salut</title>
+    <meta name="viewport" content="initial-scale=1"/>
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <!-- injector:css -->
+    <!-- endinjector -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-<h1>Salut</h1>
+<body layout="column" ng-controller="AppCtrl">
+<md-toolbar layout="row">
+    <div class="md-toolbar-tools">
+        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+            <md-icon aria-label="Menu"
+                     md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
+        </md-button>
+        <h1>Hello World</h1>
+    </div>
+</md-toolbar>
+<div layout="row" flex>
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-sm')">
+
+    </md-sidenav>
+    <div layout="column" flex id="content">
+        <md-content layout="column" flex class="md-padding">
+
+            <div layout="row" layout-margin>
+                <div flex flex-order="3">
+                    <md-icon md-font-library="material-icons">face</md-icon>
+                </div>
+                <div flex flex-order="2">
+                    2
+                </div>
+                <div flex flex-order="1">
+                    1
+                </div>
+            </div>
+
+        </md-content>
+    </div>
+</div>
+
+<!-- bower:js -->
+<!-- endbower -->
+
+<!-- injector:js -->
+<!-- endinjector -->
+
+<script>
+    //Charger livereload seulement en local
+    if (window.location.hostname == 'localhost') {
+        document.write('<script src="http://'
+                + window.location.hostname
+                + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>');
+    }
+</script>
+
 </body>
 </html>
