@@ -10,47 +10,42 @@
     <!-- endinjector -->
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
 </head>
-<body layout="column" ng-controller="AppCtrl">
+<body layout="column" ng-controller="AppCtrl" ng-cloak>
 <md-toolbar layout="row">
-    <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+    <div class="md-toolbar-tools md-whiteframe-z1">
+        <md-button ng-click="toggleSidenav('left')" class="md-icon-button" hide-gt-md>
             <md-icon aria-label="Menu"
                      md-svg-icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/68133/menu.svg"></md-icon>
         </md-button>
-        <h1>Hello World</h1>
+        <h1>ENC2</h1>
     </div>
 </md-toolbar>
-<div layout="row" flex>
-    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
-                md-is-locked-open="$mdMedia('gt-sm')">
-
+<section layout="row" flex id="menu">
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left"
+                md-is-locked-open="$mdMedia('gt-md')">
+        <md-button class="md-raised" ui-sref="twitter" ui-sref-active="md-primary">
+            <md-icon md-font-icon="material-icons">face</md-icon>
+            Twitter
+        </md-button>
+        <md-button class="md-raised" ui-sref="state1" ui-sref-active="md-primary">State 1</md-button>
+        <md-button class="md-raised" ui-sref="state2" ui-sref-active="md-primary">State 2</md-button>
     </md-sidenav>
-    <div layout="column" flex id="content">
-        <md-content layout="column" flex class="md-padding">
-
-            <div layout="row" layout-margin>
-                <div flex flex-order="3">
-                    <md-icon md-font-library="material-icons">face</md-icon>
-                </div>
-                <div flex flex-order="2">
-                    2
-                </div>
-                <div flex flex-order="1">
-                    1
-                </div>
-            </div>
-
-        </md-content>
+    <div flex ui-view>
     </div>
-</div>
+</section>
+
 
 <!-- bower:js -->
 <!-- endbower -->
 
+
 <!-- injector:js -->
 <!-- endinjector -->
 
+<script src="/socket.io/socket.io.js"></script>
 <script>
     //Charger livereload seulement en local
     if (window.location.hostname == 'localhost') {

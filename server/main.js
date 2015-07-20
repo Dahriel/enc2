@@ -1,4 +1,4 @@
-import {twitterRouter} from "./twitter/"
+import {twitterRouter, setSocket} from "./twitter/"
 import * as fondation from "./fondation/"
 
 let path = require("path");
@@ -40,6 +40,7 @@ passport.deserializeUser(function (user, done) {
 });
 
 app.use("/", express.static(path.resolve('./dist/public')));
+app.use('/twitter', twitterRouter);
 
 app.get('/auth/google',
     passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'}));
@@ -52,6 +53,8 @@ app.get('/oauth2callback',
     });
 
 io.on('connection', function (socket) {
+    console.log('New connection!');
+    setSocket(socket);
     socket.emit('news', {hello: 'world'});
     socket.on('my other event', function (data) {
         console.log(data);

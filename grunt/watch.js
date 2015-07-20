@@ -3,18 +3,18 @@ module.exports = {
         livereload: true
     },
     server: {
-        files:  [ 'server/**/*.js' ],
-        tasks:  [ 'babel', 'express:dev' ],
+        files: ['server/**/*.js'],
+        tasks: ['babel', 'express:dev'],
         options: {
             spawn: false
         }
     },
-    html:{
-        files:  [ 'client/**/*.html' ],
-        tasks:  [ 'clean:html', "copy:html", "wiredep", "injector" ]
+    client: {
+        files: ['client/**/*.html', 'client/**/*.js'],
+        tasks: ['clean:html', "copy", 'sass', "wiredep", "injector"]
     },
-    js:{
-    files:  [ 'client/**/*.js' ],
-        tasks:  [ 'clean:js', "copy:js", "wiredep", "injector" ]
-}
+    sass: {
+        files: ['client/style/**/*.scss'],
+        tasks: ['sass']
+    }
 };

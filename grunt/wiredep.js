@@ -3,6 +3,7 @@ module.exports = {
         src: [
             './dist/public/index.html'
         ],
-        ignorePath: '../../client'
+        ignorePath: '../../client',
+        exclude: ['bower_components/material-design-icons']
     }
 };

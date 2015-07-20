@@ -8,6 +8,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['clean',
         'babel',
         'copy',
+        'sass',
         'wiredep',
         'injector',
         'express:dev',

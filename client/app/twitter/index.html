@@ -1,0 +1,13 @@
+<div layout="row" layout-margin>
+    <md-content><h1>Twitter</h1></md-content>
+</div>
+<div layout="row" layout-margin ng-controller="TwitterController">
+    <div flex>
+        <md-subheader>Canada twittes : {{twittes.length}}</md-subheader>
+        <md-list>
+            <md-list-item ng-repeat="twitte in twittes | limitTo:10:0">
+                {{twitte.text}}
+            </md-list-item>
+        </md-list>
+    </div>
+</div>

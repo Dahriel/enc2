@@ -10,7 +10,8 @@ module.exports = {
         },
         files: {
             './dist/public/index.html': [
-                'dist/public/app/app.js'
+                'dist/public/app/app.js',
+                'dist/public/app/**/*.js',
             ]
         }
     },
@@ -23,7 +24,7 @@ module.exports = {
         },
         files: {
             './dist/public/index.html': [
-                'dist/public/css/**/*.css'
+                'dist/public/style/**/*.css'
             ]
         }
     }
